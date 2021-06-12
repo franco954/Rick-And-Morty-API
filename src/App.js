@@ -9,11 +9,14 @@ import CharacterForm from './components/characterForm'
 class App extends Component{
 
   state = {
+    Items: [],
+    id: 0,
     name: '',
     status: '',
     gender: '',
     species: '',
     image: '',
+    episode: 0,
     location: '',
     origin: '',
     error: null
@@ -31,16 +34,22 @@ class App extends Component{
       const data = await response.json()
       console.log(data)
 
+      const cantEpisodes = Object.keys(data.results[pos].episode).length
+
       this.setState({
+        Items: data.results,
+        id: data.results[pos].id,
         name: data.results[pos].name,
         status: data.results[pos].status,
         gender: data.results[pos].gender,
         species: data.results[pos].species,
         image: data.results[pos].image,
+        episode: cantEpisodes,
         location: data.results[pos].location.name,
         origin: data.results[pos].origin.name,
         error: null
       })
+
     }
     else{
       this.setState({
@@ -55,9 +64,9 @@ class App extends Component{
     return (
       <div className="container p-4">
         <div className="row">
-          <div className="col-md-6 mx-auto">
+          <div className="col-md-5 mx-auto">
               <CharacterForm obtenerPersonaje={this.obtenerPersonaje}/>
-              <CharacterInfo {...this.state} />
+              <CharacterInfo {...this.state}/>    
           </div>
         </div>
       </div>

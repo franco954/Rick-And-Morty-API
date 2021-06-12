@@ -6,7 +6,7 @@ import './characterInfo.css'
 
 function characterInfo(props) {
 
-    const { name, status, gender, species, image, location, origin, error } = props
+    const { name, status, gender, species, image, episode, location, origin, error } = props
 
     return (
 
@@ -32,19 +32,22 @@ function characterInfo(props) {
                         </div>
                         <div className="card-content mt-2">
                             <div>
-                                <span>Gender:</span> {gender}
+                                <span>Genero:</span> {gender}
                             </div>
                             <div>
-                                <span>Species:</span> {species}
+                                <span>Especie:</span> {species}
                             </div>
                             <div>
-                                <span>Status:</span> {status}
+                                <span>Estado:</span> {status}
                             </div>
                             <div>
-                                <span>Location:</span> {location}
+                                <span>Apariciones:</span> {episode} episodios
                             </div>
                             <div>
-                                <span>Origin:</span> {origin}
+                                <span>Ubicacion:</span> {location}
+                            </div>
+                            <div>
+                                <span>Origen:</span> {origin}
                             </div>
                         </div>
                     </div>
