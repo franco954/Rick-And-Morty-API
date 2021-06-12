@@ -1,0 +1,25 @@
+
+
+
+
+.card-title{
+    text-align: center;
+    color: #48f;
+    font-size: 1.4em;
+    font-weight: 900;
+}
+
+
+.img-character{
+    height: 230px;
+    border-radius: 10px;
+}
+
+
+.card-content > div > span{
+    color: #48c;
+}
+
+.card-content > div {
+    color: #ddd;
+}
