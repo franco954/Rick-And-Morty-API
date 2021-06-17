@@ -4,71 +4,62 @@ import './App.css';
 // componentes
 import CharacterInfo from './components/characterInfo'
 import CharacterForm from './components/characterForm'
+import Error from './components/error'
 
 
-class App extends Component{
+class App extends Component {
 
   state = {
     Items: [],
-    id: 0,
-    name: '',
-    status: '',
-    gender: '',
-    species: '',
-    image: '',
-    episode: 0,
-    location: '',
-    origin: '',
-    error: null
+    response: true,
+    error: false,
   }
 
-  obtenerPersonaje = async (e) =>{
+  obtenerPersonaje = async (e) => {
     e.preventDefault();
-    
-    const pos = 0
-    const name = e.target.elements.personaje.value;
 
-    if (name){
+    const name = e.target.elements.personaje.value;
+    if (name == ''){
+      this.setState({error: true})
+    }
+    if (name) {
       const API_URL = `https://rickandmortyapi.com/api/character/?name=${name}`
       const response = await fetch(API_URL)
       const data = await response.json()
-      console.log(data)
-
-      const cantEpisodes = Object.keys(data.results[pos].episode).length
-
-      this.setState({
-        Items: data.results,
-        id: data.results[pos].id,
-        name: data.results[pos].name,
-        status: data.results[pos].status,
-        gender: data.results[pos].gender,
-        species: data.results[pos].species,
-        image: data.results[pos].image,
-        episode: cantEpisodes,
-        location: data.results[pos].location.name,
-        origin: data.results[pos].origin.name,
-        error: null
-      })
-
+      console.log(response.status)
+      if (response.status !== 200){
+        this.setState({response: true, error: true})
+      }
+      else{
+        this.setState({
+          Items: data.results,
+          response: true,
+          error: false
+        })
+      }
     }
-    else{
-      this.setState({
-        error: 'Introduzca un personaje valido'
-      })
-      console.log(this.state)
-    }
-
   }
 
-  render(){
+
+
+  render() {
     return (
       <div className="container p-4">
         <div className="row">
-          <div className="col-md-5 mx-auto">
-              <CharacterForm obtenerPersonaje={this.obtenerPersonaje}/>
-              <CharacterInfo {...this.state}/>    
+          <div className="col-md-6 mx-auto">
+            <CharacterForm obtenerPersonaje={this.obtenerPersonaje} />
           </div>
         </div>
+        {
+          this.state.error &&
+          <Error/>
+        }
+        {
+          this.state.response &&
+        <div className="row justify-content-center d-flex flex-wrap mt-3">
+              {this.state.Items.map(i => <CharacterInfo datos={i} />)}
+        </div>
+        }
       </div>
     );
   }
