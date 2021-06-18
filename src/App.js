@@ -5,36 +5,39 @@ import './App.css';
 import CharacterInfo from './components/characterInfo'
 import CharacterForm from './components/characterForm'
 import Error from './components/error'
+import Results from './components/results'
 
 
 class App extends Component {
 
   state = {
     Items: [],
-    response: true,
+    response: false,
     error: false,
+    results: false,
   }
 
   obtenerPersonaje = async (e) => {
     e.preventDefault();
 
     const name = e.target.elements.personaje.value;
-    if (name == ''){
-      this.setState({error: true})
+    if (name == '') {
+      this.setState({ error: true, results: false })
     }
     if (name) {
       const API_URL = `https://rickandmortyapi.com/api/character/?name=${name}`
       const response = await fetch(API_URL)
       const data = await response.json()
       console.log(response.status)
-      if (response.status !== 200){
-        this.setState({response: true, error: true})
+      if (response.status !== 200) {
+        this.setState({ response: true, error: true, results: false })
       }
-      else{
+      else {
         this.setState({
           Items: data.results,
           response: true,
-          error: false
+          error: false,
+          results: true
         })
       }
     }
@@ -52,13 +55,17 @@ class App extends Component {
         </div>
         {
           this.state.error &&
-          <Error/>
+          <Error />
+        }
+        {
+          this.state.results &&
+          <Results resultados={this.state.Items}/>
         }
         {
           this.state.response &&
-        <div className="row justify-content-center d-flex flex-wrap mt-3">
-              {this.state.Items.map(i => <CharacterInfo datos={i} />)}
-        </div>
+          <div className="row justify-content-center d-flex flex-wrap mt-3">
+            {this.state.Items.map(i => <CharacterInfo datos={i} />)}
+          </div>
         }
       </div>
     );

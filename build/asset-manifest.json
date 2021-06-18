@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Rick-And-Morty-API/static/css/main.6ef0b316.chunk.css",
-    "main.js": "/Rick-And-Morty-API/static/js/main.f1f78ace.chunk.js",
-    "main.js.map": "/Rick-And-Morty-API/static/js/main.f1f78ace.chunk.js.map",
+    "main.css": "/Rick-And-Morty-API/static/css/main.40777c38.chunk.css",
+    "main.js": "/Rick-And-Morty-API/static/js/main.5945df5b.chunk.js",
+    "main.js.map": "/Rick-And-Morty-API/static/js/main.5945df5b.chunk.js.map",
     "runtime-main.js": "/Rick-And-Morty-API/static/js/runtime-main.63f68943.js",
     "runtime-main.js.map": "/Rick-And-Morty-API/static/js/runtime-main.63f68943.js.map",
-    "static/js/2.b4caf2fe.chunk.js": "/Rick-And-Morty-API/static/js/2.b4caf2fe.chunk.js",
-    "static/js/2.b4caf2fe.chunk.js.map": "/Rick-And-Morty-API/static/js/2.b4caf2fe.chunk.js.map",
+    "static/js/2.362983a2.chunk.js": "/Rick-And-Morty-API/static/js/2.362983a2.chunk.js",
+    "static/js/2.362983a2.chunk.js.map": "/Rick-And-Morty-API/static/js/2.362983a2.chunk.js.map",
     "index.html": "/Rick-And-Morty-API/index.html",
-    "static/css/main.6ef0b316.chunk.css.map": "/Rick-And-Morty-API/static/css/main.6ef0b316.chunk.css.map",
-    "static/js/2.b4caf2fe.chunk.js.LICENSE.txt": "/Rick-And-Morty-API/static/js/2.b4caf2fe.chunk.js.LICENSE.txt",
+    "static/css/main.40777c38.chunk.css.map": "/Rick-And-Morty-API/static/css/main.40777c38.chunk.css.map",
+    "static/js/2.362983a2.chunk.js.LICENSE.txt": "/Rick-And-Morty-API/static/js/2.362983a2.chunk.js.LICENSE.txt",
     "static/media/index.css": "/Rick-And-Morty-API/static/media/mundo.294da6ae.jpg",
     "static/media/presentacion.f062c537.jpg": "/Rick-And-Morty-API/static/media/presentacion.f062c537.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.63f68943.js",
-    "static/js/2.b4caf2fe.chunk.js",
-    "static/css/main.6ef0b316.chunk.css",
-    "static/js/main.f1f78ace.chunk.js"
+    "static/js/2.362983a2.chunk.js",
+    "static/css/main.40777c38.chunk.css",
+    "static/js/main.5945df5b.chunk.js"
   ]
 }
