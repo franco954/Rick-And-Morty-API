@@ -2,7 +2,7 @@
 
 
 import React from 'react';
-import './characterInfo.css'
+import '../styles/card.css'
 
 function characterInfo(props) {
     

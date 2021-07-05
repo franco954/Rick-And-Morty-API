@@ -3,7 +3,7 @@
 
 
 import React from 'react';
-import './characterForm.css'
+import '../styles/form.css'
 import  Presentacion from '../resources/presentacion.jpg'
 
 

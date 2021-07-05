@@ -1,7 +1,9 @@
 
 
+
+
 body{
-    background-image: url("./resources/mundo.jpg");
+    background-image: url("../resources/mundo.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

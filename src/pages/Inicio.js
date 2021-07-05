@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
 
 // componentes
-import CharacterInfo from './components/characterInfo'
-import CharacterForm from './components/characterForm'
-import Error from './components/error'
-import Results from './components/results'
+import CharacterInfo from '../components/card-personaje'
+import CharacterForm from '../components/form-personaje'
+import Error from '../components/pop-error'
+import Results from '../components/pop-resultados'
 
 
-class App extends Component {
+export default class Inicio extends Component {
 
   state = {
     Items: [],
@@ -72,7 +71,4 @@ class App extends Component {
   }
 }
 
-
-
-export default App;
 
