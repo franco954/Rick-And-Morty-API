@@ -20,7 +20,7 @@ export default class Inicio extends Component {
     e.preventDefault();
 
     const name = e.target.elements.personaje.value;
-    if (name == '') {
+    if (name === '') {
       this.setState({ error: true, results: false })
     }
     if (name) {
