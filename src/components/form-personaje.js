@@ -19,7 +19,7 @@ function CharacterForm(props) {
                 <div className="form-group mt-4">
                     <input type="text" name="personaje" className="form-control" autoFocus autoComplete="off"/>
                     <div class="d-grid gap-2 col-4 mx-auto mt-3">
-                        <button class="btn btn-primary" type="submit">Obtener Personaje</button>
+                        <button class="btn btn-primary" type="submit">Buscar</button>
                     </div>
                 </div>
             </form>
